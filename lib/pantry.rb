@@ -27,10 +27,6 @@ class Pantry
     end
   end
 
-  def apply_conversion(ingredients)
-
-  end
-
   def conversion(quantity)
     if quantity < 1
       quantity *= 1000
