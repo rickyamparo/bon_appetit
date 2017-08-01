@@ -44,4 +44,18 @@ class Pantry
     @cookbook << recipe
   end
 
+  def what_can_i_make
+  end
+
+  def check_if_stocked(recipe_hash)
+  recipe_hash.each_
+    recipe_hash[key] >= @stock[key]
+  end
+
+  def ingredients_required
+    @cookbook.map do |recipe|
+      recipe.ingredients
+    end
+  end
+
 end

@@ -89,7 +89,7 @@ class PantryTest < Minitest::Test
     @pantry.restock("Raw nuts", 20)
     @pantry.restock("Salt", 20)
 
-    expected ["Brine Shot", "Peanuts"]
+    expected = ["Brine Shot", "Peanuts"]
 
     assert_equal expected, @pantry.what_can_i_make
   end
