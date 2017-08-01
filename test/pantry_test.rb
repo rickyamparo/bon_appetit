@@ -79,7 +79,19 @@ class PantryTest < Minitest::Test
     r3.add_ingredient("Raw nuts", 10)
     r3.add_ingredient("Salt", 10)
 
+    @pantry.add_to_cookbook(r1)
+    @pantry.add_to_cookbook(r2)
+    @pantry.add_to_cookbook(r3)
 
+    @pantry.restock("Cheese", 10)
+    @pantry.restock("Flour", 20)
+    @pantry.restock("Brine", 40)
+    @pantry.restock("Raw nuts", 20)
+    @pantry.restock("Salt", 20)
+
+    expected ["Brine Shot", "Peanuts"]
+
+    assert_equal expected, @pantry.what_can_i_make
   end
 
 
