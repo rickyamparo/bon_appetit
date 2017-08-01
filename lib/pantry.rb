@@ -46,10 +46,19 @@ class Pantry
 
   def what_can_i_make
     possible_recipes = @cookbook
-
+    possible_recipes.map do |possibility|
+      if check_if_stocked(possibility) == false
+        possible_recipes.delete(possibility)
+      end
+    end
   end
 
-  def check_if_stocked(recipe_hash)
+  def check_if_stocked(recipe)
+    ingredients = recipe.ingredients.keys
+  end
+
+  def check_if_ingredient_stocked(ingredient)
+    ingredient
   end
 
 end
