@@ -49,16 +49,16 @@ class Pantry
     possible_recipes.map do |possibility|
       if check_if_stocked(possibility) == false
         possible_recipes.delete(possibility)
+        binding.pry
       end
     end
   end
 
   def check_if_stocked(recipe)
     ingredients = recipe.ingredients.keys
-  end
-
-  def check_if_ingredient_stocked(ingredient)
-    ingredient
+    ingredients.each do |ingredient|
+      recipe.ingredients[ingredient] < @stock[ingredient]
+    end
   end
 
 end
